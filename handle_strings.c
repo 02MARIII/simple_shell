@@ -34,9 +34,9 @@ int _strcmp(char *s1, char *s2)
 }
 int _strlen(char *s)
 {
-	int vari;
+	int vari = 0;
 
-	for (vari = 0; *s != '\0'; s++)
+	while (s[vari])
 		vari++;
 	return (vari);
 }
@@ -57,15 +57,16 @@ char *_strcpy(char *dest, char *src)
 }
 char *_strcat(char *dest, char *src)
 {
-	int i = 0;
-	int j = 0;
+    char *p = dest;
 
-	while (dest[i])
-		i++;
-	while (src[j])
+	while (*p)
+		p++;
+	while (*src)
 	{
-		dest[i++] = src[j];
-		j++;
+		*p = *src;
+		p++;
+		src++;
 	}
+	*p = '\0';
 	return (dest);
 }

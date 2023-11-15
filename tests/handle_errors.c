@@ -1,11 +1,11 @@
 #include "main.h"
 
-void printerr(char *key, char *cmd, int i)
+void printerr(char *key, char *cmd, int index)
 {
     char *tmp;
     char msg[] = ": not found\n";
 
-    tmp = _itoa(i);
+    tmp = _itoa(index);
     write(STDERR_FILENO, key, _strlen(key));
     write(STDERR_FILENO, ": ", 2);
     write(STDERR_FILENO, tmp, _strlen(tmp));

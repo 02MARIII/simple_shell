@@ -1,8 +1,9 @@
 #include "main.h"
 char *_handlepath(char *comm)
 {
-    struct stat nd;
+    char *blassa, *shll, *folder;
     int i = 0;
+    struct stat nd;
 
     while (comm[i])
     {
@@ -14,14 +15,6 @@ char *_handlepath(char *comm)
         }
         i++;
     }
-    return _search_path(comm);
-}
-
-char *_search_path(char *comm)
-{
-    char *blassa, *shll, *folder;
-    struct stat nd;
-
     blassa = _getenv("PATH");
     if (!blassa)
         return (NULL);
