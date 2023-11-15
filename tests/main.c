@@ -37,6 +37,9 @@ int main(int argc, char *argv[])
         comm = arr_str(buffer);
         if (comm == NULL)
             continue;
+	if (cmp_builtins(comm[0]))
+		handle_builtins(comm, argv, &stats, index);
+	else
         stats = _exec(comm, argv, index); 
     }
     return (0);

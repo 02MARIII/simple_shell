@@ -25,4 +25,9 @@ char *_search_path(char *comm);
 char *_itoa(int n);
 void str_rev(char *str, int len);
 void printerr(char *key, char *cmd, int i);
+void free2DArray(int** array, int rows);
+int cmp_builtins(char *comm);
+void handle_builtins(char **comm, char **argv, int *stats, int index);
+void sh_exit(char **comm,char **argv, int *stats, int index);
+void sh_env(char **comm, int *stats);
 #endif
