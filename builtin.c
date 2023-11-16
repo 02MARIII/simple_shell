@@ -63,12 +63,12 @@ void sh_exit(char **comm, char **argv, int *stats, int index)
 			write(STDERR_FILENO, comm[1], _strlen(comm[1]));
 			write(STDERR_FILENO, "\n", 1);
 			free(idx);
-			free2DArray(comm, 0);
+			freed(comm);
 			(*stats) = 2;
 			return;
 		}
 	}
-	free2DArray(comm, 0);
+	freed(comm);
 	exit(*stats);
 }
 
@@ -86,7 +86,7 @@ void sh_env(char **comm, int *stats)
 		write(STDOUT_FILENO, environ[i], _strlen(environ[i]));
 		write(STDOUT_FILENO, "\n", 1);
 	}
-	free2DArray(comm, 0);
+	freed(comm);
 	(*stats) = 0;
 }
 
