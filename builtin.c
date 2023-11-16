@@ -10,7 +10,7 @@
 int cmp_builtins(char *comm)
 {
 	int i;
-	char *builtins_str[] = {"env", "exit", "NULL"};
+	char *builtins_str[] = {"exit", "env", "setenv", "cd", NULL};
 
 	for (i = 0; builtins_str[i]; i++)
 	{

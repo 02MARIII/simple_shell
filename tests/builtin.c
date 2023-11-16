@@ -9,11 +9,11 @@
 
 int cmp_builtins(char *comm)
 {
-	char *builtins_str[] = {"env", "exit", "NULL"};
+	char *builtins_str[] = {"exit", "env", "setenv", "cd", NULL};
 	int i; 
 	for (i = 0; builtins_str[i]; i++)
 	{
-		if (_strcmp(comm, builtins_str[i]) == 0)
+		if (strcmp(comm, builtins_str[i]) == 0)
 			return (1);
 	}
 	return (0);
