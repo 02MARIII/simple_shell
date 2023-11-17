@@ -1,5 +1,11 @@
 #include "main.h"
 
+/**
+ * printerr - Print an error message for a command not found.
+ * @key: The name of the program or shell.
+ * @cmd: The command that was not found.
+ * @index: The index of the command in the shell's history.
+ */
 void printerr(char *key, char *cmd, int index)
 {
     char *tmp;
@@ -15,3 +21,4 @@ void printerr(char *key, char *cmd, int index)
 
     free(tmp);
 }
+

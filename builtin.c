@@ -6,7 +6,6 @@
  *
  * Return: 1 if the command is a builtin, 0 otherwise.
  */
-
 int cmp_builtins(char *comm)
 {
 	int i;
@@ -17,7 +16,7 @@ int cmp_builtins(char *comm)
 		if (_strcmp(comm, builtins_str[i]) == 0)
 			return (1);
 	}
-	
+
 	return (0);
 }
 
@@ -150,4 +149,3 @@ void free2DArray(char **array, int rows)
 
 	free(array);
 }
-

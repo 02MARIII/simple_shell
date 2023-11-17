@@ -1,5 +1,13 @@
 #include "main.h"
 
+/**
+ * _getenv - Get the value of an environment variable.
+ * @vr: The name of the environment variable.
+ *
+ * Returns:
+ *  - On success, returns a pointer to the value of the environment variable.
+ *  - If the environment variable is not found, returns NULL.
+ */
 char *_getenv(char *vr)
 {
     char *temp, *env;
@@ -23,3 +31,4 @@ char *_getenv(char *vr)
     }
     return (NULL);
 }
+
