@@ -1,3 +1,5 @@
+#include "main.h"
+
 /**
  * printerr - Print an error message for a command not found.
  * @key: The name of the program or shell.
