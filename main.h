@@ -28,7 +28,7 @@ void printerr(char *key, char *cmd, int i);
 void free2DArray(char **array, int rows);
 int cmp_builtins(char *comm);
 void handle_builtins(char **comm, char **argv, int *stats, int index);
-void sh_exit(char **comm,char **argv, int *stats, int index);
+void sh_exit(char **comm, char **argv, int *stats, int index);
 void sh_env(char **comm, int *stats);
 int is_positive_nb(char *str);
 int _atoi(char *str);

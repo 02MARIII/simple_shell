@@ -1,6 +1,30 @@
 #include "main.h"
 
 /**
+ * count_tokens - Entry point
+ * @buffer: param for string
+ * description: the desciption
+ * Return: int
+*/
+int count_tokens(char *buffer)
+{
+	char *token = NULL;
+	char *temp = _strdup(buffer);
+	int count = 0;
+
+	if (temp == NULL)
+		return (0);
+	token = strtok(temp, " \t\n");
+	while (token)
+	{
+		count++;
+		token = strtok(NULL, " \t\n");
+	}
+
+	free(temp);
+	return (count);
+}
+/**
  * arr_str - Tokenize a string into an array of strings.
  * @buffer: The string to be tokenized.
  *
@@ -10,36 +34,21 @@
  */
 char **arr_str(char *buffer)
 {
-	char *token = NULL;
-	char *temp = NULL;
-	char **comm = NULL;
-	int mov = 0;
 	int i = 0;
+	char *token = NULL;
 
 	if (buffer == NULL)
 		return (NULL);
 
-	temp = _strdup(buffer);
-	token = strtok(temp, " \t\n");
+	int mov = count_tokens(buffer);
 
-	if (!token)
+	if (mov == 0)
 	{
-		free(temp);
-		temp = NULL;
 		free(buffer);
-		buffer = NULL;
 		return (NULL);
 	}
 
-	while (token)
-	{
-		mov++;
-		token = strtok(NULL, " \t\n");
-	}
-
-	free(temp);
-	temp = NULL;
-	comm = malloc(sizeof(char *) * (mov + 1));
+	char **comm = malloc(sizeof(char *) * (mov + 1));
 
 	if (!comm)
 	{
@@ -47,16 +56,15 @@ char **arr_str(char *buffer)
 		return (NULL);
 	}
 
-	token = strtok(buffer, " \t\n");
+	*token = strtok(buffer, " \t\n");
+
 	while (token)
 	{
 		comm[i] = _strdup(token);
 		token = strtok(NULL, " \t\n");
 		i++;
 	}
-
 	free(buffer);
-	buffer = NULL;
 	comm[i] = NULL;
 	return (comm);
 }

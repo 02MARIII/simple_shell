@@ -38,6 +38,7 @@ int main(int argc, char *argv[])
 	char *buffer = NULL;
 	char **comm = NULL;
 	int stats = 0, index = 0;
+
 	(void)argc;
 
 	while (1)
