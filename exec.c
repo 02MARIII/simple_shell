@@ -1,12 +1,15 @@
 #include "main.h"
 
 /**
- * _exec - Execute a command.
+ * _exec - Execute a command and get its exit status.
  * @comm: The command to be executed.
  * @argv: List of argv.
  * @index: The index of the command in the shell's history.
  *
- * Returns:
+ * This function executes the specified command, waits for its completion,
+ * and returns the exit status of the command.
+ *
+ * Return:
  *  - On success, returns the exit status of the command.
  *  - If the command is not found or encounters an error, returns 127.
  */

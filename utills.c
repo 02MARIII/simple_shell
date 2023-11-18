@@ -22,8 +22,9 @@ void freed(char **frr)
  * _itoa - Convert an integer to a string.
  * @n: The integer to be converted.
  *
- * Returns:
- *  - On success, returns a dynamically allocated string representing the integer.
+ * Return:
+ *  - On success, returns a dynamically,
+ *   allocated string representing the integer.
  */
 char *_itoa(int n)
 {
@@ -65,5 +66,52 @@ void str_rev(char *str, int len)
 		s++;
 		f--;
 	}
+}
+
+/**
+ * _atoi - Convert a string to an integer.
+ * @str: The string to convert.
+ *
+ * Return: The converted integer.
+ */
+int _atoi(char *str)
+{
+	int i, num = 0;
+	int sign = 1;
+
+	if (str[0] == '-')
+	{
+		sign = -1;
+		i = 1;
+	}
+	else
+		i = 0;
+
+	for (i = 0; str[i] != '\0'; i++)
+	{
+		num *= 10;
+		num += (str[i] - '0');
+	}
+	return (sign * num);
+}
+
+/**
+ * is_positive_nb - Check if a string represents a positive number.
+ * @str: The string to check.
+ *
+ * Return: 1 if the string is a positive number, 0 otherwise.
+ */
+int is_positive_nb(char *str)
+{
+	int i;
+
+	if (!str)
+		return (0);
+	for (i = 0; str[i]; i++)
+	{
+		if (str[i] < '0' || str[i] > '9')
+			return (0);
+	}
+	return (1);
 }
 

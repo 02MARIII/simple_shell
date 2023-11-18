@@ -4,7 +4,7 @@
  * arr_str - Tokenize a string into an array of strings.
  * @buffer: The string to be tokenized.
  *
- * Returns:
+ * Return:
  *  - On success, returns a dynamically allocated array of strings.
  *  - If the input string is NULL or no tokens are found, returns NULL.
  */
@@ -60,4 +60,3 @@ char **arr_str(char *buffer)
 	comm[i] = NULL;
 	return (comm);
 }
-

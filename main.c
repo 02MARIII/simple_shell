@@ -3,7 +3,7 @@
 /**
  * _field - Read a line from standard input.
  *
- * Returns:
+ * Return:
  *  - A pointer to the read line.
  *  - NULL if an error occurs or end-of-file is reached.
  */
@@ -30,7 +30,7 @@ char *_field(void)
  * @argc: Number of command-line arguments.
  * @argv: Array of command-line argument strings.
  *
- * Returns:
+ * Return:
  *  - 0 on successful execution.
  */
 int main(int argc, char *argv[])

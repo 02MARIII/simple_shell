@@ -4,8 +4,9 @@
  * _handlepath - Handle the search for a command in the PATH.
  * @comm: The command to search for.
  *
- * Returns:
- *  - On success, returns a dynamically allocated string with the full path of the command.
+ * Return:
+ *  - On success, returns a dynamically allocated,
+ *  string with the full path of the command.
  *  - If the command is not found, returns NULL.
  */
 char *_handlepath(char *comm)
