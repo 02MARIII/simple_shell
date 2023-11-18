@@ -35,12 +35,14 @@ int count_tokens(char *buffer)
 char **arr_str(char *buffer)
 {
 	int i = 0;
+	int mov = 0;
 	char *token = NULL;
+	char **comm = NULL;
 
 	if (buffer == NULL)
 		return (NULL);
 
-	int mov = count_tokens(buffer);
+	mov = count_tokens(buffer);
 
 	if (mov == 0)
 	{
@@ -48,7 +50,7 @@ char **arr_str(char *buffer)
 		return (NULL);
 	}
 
-	char **comm = malloc(sizeof(char *) * (mov + 1));
+	comm = malloc(sizeof(char *) * (mov + 1));
 
 	if (!comm)
 	{
@@ -56,7 +58,7 @@ char **arr_str(char *buffer)
 		return (NULL);
 	}
 
-	*token = strtok(buffer, " \t\n");
+	token = strtok(buffer, " \t\n");
 
 	while (token)
 	{

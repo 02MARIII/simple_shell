@@ -32,4 +32,5 @@ void sh_exit(char **comm, char **argv, int *stats, int index);
 void sh_env(char **comm, int *stats);
 int is_positive_nb(char *str);
 int _atoi(char *str);
+int count_tokens(char *buffer);
 #endif
